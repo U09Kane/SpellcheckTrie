@@ -25,13 +25,9 @@ class Node():
         if self.is_root and word[idx] not in self.children:
             next_node = Node(word[idx])
             self.children[word[idx]] = next_node
-            # next_node.insert_word(word, idx + 1)
 
         elif word[idx] in self.children:
-
             next_node = self.children[word[idx]]
-
-            # next_node.insert_word(word, idx + 1)
 
         else:
             self.children[word[idx]] = Node(word[idx])
@@ -44,7 +40,7 @@ class Node():
         if self.is_root and word[idx] in self.children:
             return self.children[word[idx]].is_word(word, idx + 1)
 
-        elif idx == len(word) or word[idx] not in self.children:
+        if idx == len(word) or word[idx] not in self.children:
             return False
 
         elif idx == len(word) - 1 and self.children[word[idx]].is_end is True:
