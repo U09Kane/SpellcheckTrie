@@ -9,15 +9,33 @@
 class Node():
 
     def __init__(self, char):
+        '''Initialize new node for a Trie 
 
-        self.char = str(char)
+        Note: recommend creating root with Node('*')
+
+        Args:
+            char (str): character to represent Node
+
+        '''
+        self.char = str(char) 
+        
+        # Dictionary: key = str character, value = Node(character)
         self.children = {}
 
         self.is_root = False
         self.is_end = False
 
     def insert_word(self, word, idx=0):
+        '''Adds new word to Trie Structure; letter by letter
 
+        Args:
+            word:   word being inserted
+            idx:    index of the current character in the word (default 0)
+
+        Returns:
+            VOID.
+
+        '''
         if idx == len(word):
             self.is_end = True
             return
@@ -36,11 +54,14 @@ class Node():
         next_node.insert_word(word, idx + 1)
 
     def is_word(self, word, idx=0):
+        ''' 
+
+        '''
 
         if self.is_root and word[idx] in self.children:
             return self.children[word[idx]].is_word(word, idx + 1)
 
-        if idx == len(word) or word[idx] not in self.children:
+        if idx == len(word) or word[idx] not in self.children: 
             return False
 
         elif idx == len(word) - 1 and self.children[word[idx]].is_end is True:
