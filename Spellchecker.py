@@ -76,25 +76,7 @@ class Node():
             return self.children[word[idx]].is_word(word, idx + 1)
 
 
-root = Node('*')
-root.is_root = True
-
-root.insert_word("do")
-root.insert_word("dogs")
-root.insert_word("doors")
-root.insert_word("dives")
-
-print(root.is_word("apple"))
-print(root.is_word("zebra"))
-print(root.is_word("ufo"))
-print(root.is_word("popsicle"))
-print(root.is_word("d"))
-print(root.is_word("doo"))
-print(root.is_word("dive"))
-print(root.is_word("dog"))
 
 
-print(root.is_word("do"))
-print(root.is_word("dogs"))
-print(root.is_word("doors"))
-print(root.is_word("dives"))
+
+
