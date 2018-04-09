@@ -11,7 +11,7 @@ class Node():
     def __init__(self, char):
         '''Initialize new node for a Trie 
 
-        Note: recommendx creating root with Node('*')
+        Note: recommend creating root with Node('*')
 
         Args:
             char (str): character to represent Node
@@ -75,3 +75,8 @@ class Node():
         else:
             return self.children[word[idx]].is_word(word, idx + 1)
 
+
+root = Node('*')
+root.is_root = True
+
+if __name__ = __main__ 
